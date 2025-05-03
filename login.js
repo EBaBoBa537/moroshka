@@ -15,7 +15,7 @@ document.querySelector('button').addEventListener('click', () => {
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 alert('Вы успешно вошли!');
                 // Переход на главную страницу после входа
-                window.location.href = 'activity_home.html';
+                window.location.href = 'home.html';
             } else {
                 alert('Неверный email или пароль.');
             }

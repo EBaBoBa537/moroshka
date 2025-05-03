@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>activity_film_detail</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        nav {
+            background-color: #FFF2CC;
+            height: 56px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        nav a {
+            background: none;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 10px;
+        }
+            .yellow {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+            .yellow span {
+            background-color: #FFF2CC;
+            font-size: 14px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .grey {
+            display: inline-block;
+            background-color: #DBDBDB;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-top: 8px;
+            font-size: 15px;
+            padding: 1px 5px;
+        }
+            .no-grey {
+            color: #B8B8B8;
+            font-size: 15px;
+            margin-top: 8px;
+            display: inline-block;
+        }
+            .information {
+            background-color: #EDEDED;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            margin: 15px auto 60px auto;
+            width: 80%;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <img id="film-image" src="" style="width: 70%; margin: 15px 15% 0; border-radius: 20px;" />
+    <h1 id="film-name">Загрузка...</h1>
+
+    <div class="yellow">
+        <span id="film-category"></span>
+        <span id="film-age"></span>
+    </div>
+
+    <div style="width: 80%; margin: 0 auto;" id="seanses-container"></div>
+
+    <p style="font-size: 18px; font-weight: bolder; margin: 15px 0 10px 15px">Описание</p>
+    <p class="opisanie" id="film-description"></p>
+
+    <div class="information" id="film-info"></div>
+
+    <nav>
+        <a href="activity_home"><img src="drawable/icon_films.png" style="height: 28px;"></a>
+        <a href="activity_home"><img src="drawable/icon_afisha.png" style="height: 33px;"></a>
+        <a href="activity_home"><img src="drawable/icon_my_tickets.png" style="height:26px;"></a>
+        <a href="activity_home"><img src="drawable/icon_my_profile.png" style="height: 32px;"></a>
+    </nav>
+
+    <script src="film_detail.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity_film_detail</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        button {
+            font-family: 'Nunito', sans-serif;
+            border: none;
+        }
+        nav {
+            background-color: #FFF2CC;
+            height: 56px;
+            width: 100%;
+            left: 0px;
+            bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            position: fixed;
+        }
+        nav a {
+            background-color: #00000000;
+            border: none;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bolder;
+            font-size: 28px;
+            width: 100%;
+            text-align: center;
+            margin: 5px 0px 0px 0px;
+        }
+
+        .yellow {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .yellow span {
+            background-color: #FFF2CC;
+            font-size: 14px;
+            padding: 2px 6px 2px 6px;
+            border-radius: 4px;
+        }
+
+        .grey {
+            display: inline-block;
+            padding: 1px 5px 1px 5px;
+            background-color: #DBDBDB;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        .no-grey {
+            display: inline-block;
+            padding: 0px 5px 0px 0px;
+            color: #B8B8B8;
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        .information {
+            background-color: #EDEDED;
+            padding: 5px 10px 5px 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="drawable/film_12.jpg" style="width: 70%; margin: 15px 15% 0px 15%; border-radius: 20px;">
+    <h1>Царевна-лягушка</h1>
+
+    <div class="yellow">
+        <span>Детский</span>
+        <span>12+</span>
+    </div>
+
+    <div style="width: 80%; margin-left: 10%; margin-right: 10%;">
+        <p style="font-size: 16px; margin: 15px 0px 0px 0px;"> 22 марта, сегодня   10 руб.</p>
+        <p>
+            <span class="grey">14:45</span>
+            <span class="grey">15:50</span>
+            <span class="grey">17:20</span>
+        </p>
+        <p style="font-size: 16px; margin: 15px 0px 0px 0px;"> 23 марта, вторник   10 руб.</p>
+        <p>
+            <span class="grey">14:45</span>
+            <span class="grey">15:50</span>
+            <span class="grey">17:20</span>
+            <span class="grey">17:20</span>
+        </p>
+        <p style="font-size: 16px; margin: 15px 0px 0px 0px;"> 24 марта, среда   10 руб.</p>
+        <p>
+            <span class="grey">14:45</span>
+            <span class="grey">15:50</span>
+        </p>
+        <p style="font-size: 16px; margin: 15px 0px 0px 0px;"> 25 марта, четверг   10 руб.</p>
+        <p>
+            <span class="grey">14:45</span>
+            <span class="grey">15:50</span>
+            <span class="grey">17:20</span>
+            <span class="grey">17:20</span>
+            <span class="grey">17:20</span>
+            <span class="grey">17:20</span>
+            <span class="grey">17:20</span>
+        </p>
+        <p style="font-size: 16px; margin: 15px 0px 0px 0px;"> 26 марта, пятница   10 руб.</p>
+        <p>
+            <span class="no-grey">Нет сеансов</span>
+        </p>
+
+        <p style="font-size: 18px; font-weight: bolder; margin: 15px 0px 10px 15px">Описание</p>
+        <p class="opisanie">Маркус — профи высшего класса, который специализируется на отлове сбежавших животных. Но новое задание бросает вызов даже такому мастеру своего дела.</p>
+        <p class="information">
+            <span><span style="color: #A6A6A6;">Страна: </span>Великобритания, Канада, США, Украина, Япония</span> <br>
+            <span><span style="color: #A6A6A6;">Год: </span>2024</span> <br>
+            <span><span style="color: #A6A6A6;">Режиссеры: </span>Дэвид Фейсс, Синция Анджелини</span> <br>
+            <span><span style="color: #A6A6A6;">В ролях: </span>Джейсон Судейкис, Лилли Сингх, Лоррейн Эшборн, Рэйн Уилсон, Шелби Янг, Энди Серкис</span> <br>
+            <span><span style="color: #A6A6A6;">Длительность: </span>1 ч 26 мин</span> <br>
+            <span><span style="color: #A6A6A6;">Возрастное ограничение: </span>12+</span> <br>
+            <span><span style="color: #A6A6A6;">Жанр: </span>Детский</span>
+        </p>
+    </div>
+
+
+    
+    <nav>
+        <a href="activity_home">
+            <img src="drawable/icon_films.png" style="height: 28px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_afisha.png" style="height: 33px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_my_tickets.png" style="height:26px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_my_profile.png" style="height: 32px;">
+        </a>
+    </nav>
+</body>
+</html> -->

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity_delete_data</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        button {
+            font-family: 'Nunito', sans-serif;
+            border: none;
+        }
+        nav {
+            background-color: #DBDBDB;
+            height: 56px;
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            position: fixed;
+        }
+        nav a {
+            background-color: #00000000;
+            border: none;
+        }
+        h2 {
+            margin: 30px 0px 30px 0px;
+            font-weight: bolder;
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .field label {
+            margin-left: calc(10% + 10px);
+            margin-bottom: 3px;
+        }
+
+        button {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            height: 35px;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .select-form {
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        .select-data {
+            padding: 4px 10px 4px 0px;
+            border: none;
+            background-color: #EDEDED;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: 'Nunito', sans-serif;
+        }
+                
+    </style>
+</head>
+<body>
+    <h2><img src="drawable/back_arrow.png" style="height: 25px; position: absolute; left: 10px; top: 3px;">Удалить дату</h2>
+
+    <div class="field" style='margin-bottom: 15px; margin-top: 60px;'>
+        <label for="data">Выберите дату</label>
+        <form class="select-form">
+            <select name="data" id="data" class="select-data">
+              <option value="-">-</option>
+              <option value="Как приручить дракона">Как приручить дракона</option>
+              <option value="Сахара">Сахара</option>
+              <option value="Шрек 5">Шрек 5</option>
+              <option value="Тайная жизнь домашних животных">Тайная жизнь домашних животных</option>
+            </select>
+        </form>   
+    </div>
+
+    <button style="background-color: #DBDBDB; margin-bottom: 15px; margin-top: 30px;">Удалить дату</button>
+    <button style="background-color: #DBDBDB;">Отмена</button>
+
+    <nav>
+        <a href="activity_home">
+            <img src="drawable/icon_film_list.png" style="height: 28px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_shedule.png" style="height:30px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_password.png" style="height: 32px;">
+        </a>
+    </nav>
+
+    <script src="admin_delete_data.js"></script>
+</body>
+</html>

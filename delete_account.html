@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity_delete_account</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        button {
+            font-family: 'Nunito', sans-serif;
+            border: none;
+        }
+        nav {
+            background-color: #FFF2CC;
+            height: 56px;
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            position: fixed;
+        }
+        nav a {
+            background-color: #00000000;
+            border: none;
+        }
+        h2 {
+            margin: 30px 0px 30px 0px;
+            font-weight: bolder;
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+        }
+        
+        button {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            height: 35px;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .text {
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 120px;
+            margin-bottom: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h2><img src="drawable/back_arrow.png" style="height: 25px; position: absolute; left: 10px; top: 3px;">Удалить аккаунт</h2>
+
+    <div class="text">Вы точно хотите удалить аккаунт?</div>
+ 
+    <button style="background-color: #F8CBAD; margin-bottom: 15px;">Удалить аккаунт</button>
+    <button style="background-color: #EDEDED;">Отмена</button>
+    
+    <nav>
+        <a href="activity_home">
+            <img src="drawable/icon_films.png" style="height: 28px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_afisha.png" style="height: 33px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_my_tickets.png" style="height:26px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_my_profile.png" style="height: 32px;">
+        </a>
+    </nav>
+
+    <script src="delete_account.js"></script>
+</body>
+</html>

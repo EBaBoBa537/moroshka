@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity_register</title>
+    <style>
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FDEDD3;
+        }
+        button {
+            font-family: 'Nunito', sans-serif;
+            border: none;
+            width: 100%;
+            height: 35px;
+            font-size: 18px;
+            border-radius: 10px;
+            background-color: #FFE699;
+        }
+        h2 {
+            margin: 100px 0px 30px 0px;
+            font-weight: normal;
+            font-size: 28px;
+            width: 100%;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+            border-radius: 10px;
+        }
+        
+        .content {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            width: calc(100% - 60px);
+            margin-left: 10px;
+            padding: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .field input {
+            font-size: 15px;
+            font-family: 'Nunito', sans-serif;
+            background-color: #FFFFFF;
+            border: 2px solid #DBDBDB;
+            border-radius: 6px;
+            padding: 5px 10px 5px 10px;
+            width: calc(100% - 40px);
+        }
+        .field label {
+            margin-left: 10px;
+            margin-bottom: 3px;
+        }
+
+        .drugoi-vhod {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            color: #ADA373;
+            margin-top: 6px;
+            font-size: 14px;
+        }
+        .ssylka {
+            color: #000000;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 15px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Регистрация</h2>
+
+    <div class="content">
+
+        <a href="" class="ssylka">Есть аккаунт? <span style="color: #BF9000;">Войти в аккаунт</span></a>
+
+        <div class="field" style='margin-top: 15px;'>
+            <label for="email">Введите email</label>
+            <input type="text" name="email">        
+        </div>
+        <div class="field" style='margin-top: 20px;'>
+            <label for="password">Введите пароль</label>
+            <input type="password" name="password">        
+        </div>
+        <div class="field" style='margin-top: 20px;'>
+            <label for="confirm">Подтвердите пароль</label>
+            <input type="password" name="confirm">        
+        </div>
+
+        <button class="button" style="margin-top: 30px; margin-bottom: 15px;">Зарегистрироваться</button>
+
+    </div>
+
+    <a href="" class="drugoi-vhod">Вход для администратора</a>
+    
+    <script src="register.js"></script>
+</body>
+</html>

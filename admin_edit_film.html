@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activity_edit_film</title>
+    <style>
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        button {
+            font-family: 'Nunito', sans-serif;
+            border: none;
+        }
+        nav {
+            background-color: #DBDBDB;
+            height: 56px;
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            position: fixed;
+        }
+        nav a {
+            background-color: #00000000;
+            border: none;
+        }
+        h2 {
+            margin: 30px 0px 30px 0px;
+            font-weight: bolder;
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+        }
+        
+        .field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .field input {
+            font-size: 15px;
+            font-family: 'Nunito', sans-serif;
+            background-color: #FFFFFF;
+            border: 2px solid #DBDBDB;
+            border-radius: 6px;
+            width: calc(80% - 20px);
+            margin-left: 10%;
+            padding: 5px 10px 5px 10px;
+        }
+        .field label {
+            margin-left: calc(10% + 10px);
+            margin-bottom: 3px;
+        }
+        .select-form {
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        .select-data {
+            padding: 4px 10px 4px 0px;
+            border: none;
+            background-color: #EDEDED;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .plus-minus {
+            width: 22px;
+            height: 22px;
+            border-radius: 5px;
+            background-color: #DBDBDB;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        button {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            height: 35px;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2><img src="drawable/back_arrow.png" style="height: 25px; position: absolute; left: 10px; top: 3px;">Настроить фильм</h2>
+
+    <div class="field" style='margin-top: 20px;'>
+        <label for="name">Введите название фильма</label>
+        <input type="text" name="name">        
+    </div>
+
+    <div class="field" style='margin-top: 15px;'>
+        <label for="image">Картинка</label>
+        <form class="select-form">
+            <select name="image" id="image" class="select-data">
+              <option value="-">-</option>
+              <option value="film_1.jpg">film_1.jpg</option>
+              <option value="film_2.jpg">film_2.jpg</option>
+              <option value="film_3.jpg">film_3.jpg</option>
+              <option value="film_4.jpg">film_4.jpg</option>
+              <option value="film_5.jpg">film_5.jpg</option>
+              <option value="film_6.jpg">film_6.jpg</option>
+              <option value="film_7.jpg">film_7.jpg</option>
+              <option value="film_8.jpg">film_8.jpg</option>
+              <option value="film_9.jpg">film_9.jpg</option>
+              <option value="film_10.jpg">film_10.jpg</option>
+              <option value="film_11.jpg">film_11.jpg</option>
+              <option value="film_12.jpg">film_12.jpg</option>
+              <option value="film_13.jpg">film_13.jpg</option>
+              <option value="film_14.jpg">film_14.jpg</option>
+              <option value="film_15.jpg">film_15.jpg</option>
+              <option value="film_16.jpg">film_16.jpg</option>
+              <option value="film_17.jpg">film_17.jpg</option>
+              <option value="film_18.jpg">film_18.jpg</option>
+              <option value="film_19.jpg">film_19.jpg</option>
+              <option value="film_20.jpg">film_20.jpg</option>
+              <option value="film_21.jpg">film_21.jpg</option>
+              <option value="film_22.jpg">film_22.jpg</option>
+              <option value="film_23.jpg">film_23.jpg</option>
+              <option value="film_24.jpg">film_24.jpg</option>
+              <option value="film_25.jpg">film_25.jpg</option>
+              <option value="film_26.jpg">film_26.jpg</option>
+              <option value="film_27.jpg">film_27.jpg</option>
+              <option value="film_28.jpg">film_28.jpg</option>
+              <option value="film_29.jpg">film_29.jpg</option>
+              <option value="film_30.jpg">film_30.jpg</option>
+            </select>
+        </form>    
+    </div>
+
+    <div style="display: flex; margin-top: 15px; width: 80%; margin-left: 20px">
+        <div class="field" style='width: 65%'>
+            <label for="category">Жанр</label>
+            <form class="select-form" style="width: 100%;">
+                <select name="category" id="category" class="select-data" style="width: 100%;">
+                <option value="Анимационный">Анимационный</option>
+                <option value="Драма">Драма</option>
+                <option value="Боевик">Боевик</option>
+                <option value="Приключения">Приключения</option>
+                <option value="Ужасы">Ужасы</option>
+                </select>
+            </form>   
+        </div>
+        
+        <div class="field" style='margin-left: 20px; width: calc(35% - 20px)'>
+            <label for="age_limit">Возраст</label>
+            <form class="select-form" style="width: 100%;">
+                <select name="age_limit" id="age_limit" class="select-data" style="width: 100%;">
+                <option value="6+">6+</option>
+                <option value="12+">12+</option>
+                <option value="16+">16+</option>
+                <option value="18+">18+</option>
+                </select>
+            </form>   
+        </div>
+    </div>
+
+    
+    <div style="display: flex; margin-top: 15px; width: calc(80% + 20px); margin-left: 20px">
+        <div style="margin-left: 20px;">
+            <span style="font-size: 16px;">Цена билета</span>
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button class="plus-minus">+</button>
+                <span>10 руб.</span>
+                <button class="plus-minus">-</button>
+            </div>
+        </div>
+        <div class="field" style='width: 22%;'>
+            <label for="year">Год</label>
+            <input type="text" name="year">        
+        </div>
+        <div class="field" style='width: 34%;'>
+            <label for="duration">Длительность</label>
+            <input type="text" name="duration">        
+        </div>
+    </div>
+    
+    <div class="field" style='margin-top: 20px;'>
+        <label for="description">Описание</label>
+        <input type="text" name="description" style="height: 100px; border-radius: 10px;">        
+    </div>
+    
+    <div class="field" style='margin-top: 20px;'>
+        <label for="country">Страна</label>
+        <input type="text" name="country" style="height: 100px; border-radius: 10px;">        
+    </div>
+    
+    <div class="field" style='margin-top: 20px;'>
+        <label for="directors">Режиссеры</label>
+        <input type="text" name="directors" style="height: 100px; border-radius: 10px;">        
+    </div>
+    
+    <div class="field" style='margin-top: 20px;'>
+        <label for="actors">В ролях</label>
+        <input type="text" name="actors" style="height: 100px; border-radius: 10px;">        
+    </div>
+
+
+
+    <button style="background-color: #DBDBDB; margin-bottom: 15px; margin-top: 30px;">Сохранить фильм</button>
+    <button style="background-color: #DBDBDB; margin-bottom: 15px;">Удалить фильм</button>
+    <button style="background-color: #DBDBDB;">Отмена</button>
+
+
+    <nav>
+        <a href="activity_home">
+            <img src="drawable/icon_film_list.png" style="height: 28px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_shedule.png" style="height:30px;">
+        </a>
+        <a href="activity_home">
+            <img src="drawable/icon_password.png" style="height: 32px;">
+        </a>
+    </nav>
+
+    <script src="admin_edit_film.js"></script>
+</body>
+</html>

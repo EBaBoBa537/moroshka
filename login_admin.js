@@ -14,7 +14,7 @@ document.querySelector('button').addEventListener('click', () => {
                 localStorage.setItem('adminLoggedIn', 'true');
                 alert('Вход выполнен как администратор!');
                 // Перенаправление на админ-панель
-                window.location.href = 'admin_panel.html';
+                window.location.href = 'admin_list_film.html';
             } else {
                 alert('Неверный код или пароль администратора.');
             }

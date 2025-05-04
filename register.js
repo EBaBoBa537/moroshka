@@ -31,7 +31,7 @@ document.querySelector('button').addEventListener('click', () => {
             localStorage.setItem('users', JSON.stringify(users));
 
             alert('Регистрация прошла успешно!');
-            window.location.href = 'activity_login.html'; // перенаправление на страницу входа
+            window.location.href = 'login.html'; // перенаправление на страницу входа
         })
         .catch(error => {
             console.error('Ошибка при регистрации:', error);

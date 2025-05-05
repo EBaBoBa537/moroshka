@@ -16,7 +16,9 @@ Promise.all([
     localStorage.setItem('tickets', JSON.stringify(tickets.tickets));
     localStorage.setItem('users', JSON.stringify(users.users));
 
-    // Правильный вывод всех ключей
+    // Устанавливаем, что никто не авторизован
+    localStorage.setItem('currentUserId', '-1');
+
     console.log('LocalStorage содержимое после загрузки:');
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
@@ -25,6 +27,7 @@ Promise.all([
 })
 .catch(err => console.error('Ошибка при загрузке данных:', err));
 
+// Авторизация администратора
 document.querySelector('button').addEventListener('click', () => {
     const kod = document.querySelector('input[name="admin-kod"]').value.trim();
     const password = document.querySelector('input[name="password"]').value.trim();
@@ -36,7 +39,7 @@ document.querySelector('button').addEventListener('click', () => {
 
     const admin = JSON.parse(localStorage.getItem('admin'));
     if (admin && admin.admin_kod === kod && admin.password === password) {
-        localStorage.setItem('adminLoggedIn', 'true');
+        localStorage.setItem('currentUserId', '-2');
         alert('Вход выполнен как администратор!');
         window.location.href = 'admin_film_list.html';
     } else {

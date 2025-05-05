@@ -1,8 +1,8 @@
 // Очистка и загрузка
 localStorage.clear();
 Promise.all([
-    fetch('admin.json').then(res => res.json()),
-    fetch('films.json').then(res => res.json()),
+    fetch('./admin.json').then(res => res.json()),
+    fetch('./films.json').then(res => res.json()),
     fetch('days.json').then(res => res.json()),
     fetch('seanses.json').then(res => res.json()),
     fetch('tickets.json').then(res => res.json()),

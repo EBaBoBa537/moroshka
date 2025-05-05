@@ -42,7 +42,7 @@ document.querySelector('button').addEventListener('click', () => {
 
     if (index !== -1) {
         localStorage.setItem('currentUserId', index.toString());
-        alert('Вы успешно вошли!');
+        // alert('Вы успешно вошли!');
         window.location.href = 'home.html';
     } else {
         alert('Неверный email или пароль.');

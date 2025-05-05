@@ -63,6 +63,6 @@ document.querySelector('button').addEventListener('click', () => {
     // Устанавливаем текущего пользователя
     localStorage.setItem('currentUserId', String(newId));
 
-    alert('Регистрация прошла успешно!');
+    // alert('Регистрация прошла успешно!');
     window.location.href = 'login.html';
 });

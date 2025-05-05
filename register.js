@@ -16,6 +16,9 @@ Promise.all([
     localStorage.setItem('tickets', JSON.stringify(tickets.tickets));
     localStorage.setItem('users', JSON.stringify(users.users));
 
+    // Добавляем текущего пользователя (-1 = никто не авторизован)
+    localStorage.setItem('currentUserId', '-1');
+
     // Правильный вывод всех ключей
     console.log('LocalStorage содержимое после загрузки:');
     for (let i = 0; i < localStorage.length; i++) {
@@ -49,8 +52,16 @@ document.querySelector('button').addEventListener('click', () => {
         return;
     }
 
-    users.push({ email, password });
+    // Назначаем ID (максимальный + 1 или 1, если список пуст)
+    const newId = users.length > 0 ? Math.max(...users.map(u => u.id || 0)) + 1 : 1;
+
+    // Создаем пользователя и сохраняем
+    const newUser = { id: newId, email, password };
+    users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
+
+    // Устанавливаем текущего пользователя
+    localStorage.setItem('currentUserId', String(newId));
 
     alert('Регистрация прошла успешно!');
     window.location.href = 'login.html';

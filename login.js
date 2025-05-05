@@ -16,7 +16,9 @@ Promise.all([
     localStorage.setItem('tickets', JSON.stringify(tickets.tickets));
     localStorage.setItem('users', JSON.stringify(users.users));
 
-    // Правильный вывод всех ключей
+    // Устанавливаем, что никто не авторизован
+    localStorage.setItem('currentUserId', '-1');
+
     console.log('LocalStorage содержимое после загрузки:');
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
@@ -36,9 +38,10 @@ document.querySelector('button').addEventListener('click', () => {
     }
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(u => u.email === email && u.password === password);
-    if (user) {
-        localStorage.setItem('currentUser', JSON.stringify(user));
+    const index = users.findIndex(u => u.email === email && u.password === password);
+
+    if (index !== -1) {
+        localStorage.setItem('currentUserId', index.toString());
         alert('Вы успешно вошли!');
         window.location.href = 'home.html';
     } else {

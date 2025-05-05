@@ -40,7 +40,7 @@ document.querySelector('button').addEventListener('click', () => {
     const admin = JSON.parse(localStorage.getItem('admin'));
     if (admin && admin.admin_kod === kod && admin.password === password) {
         localStorage.setItem('currentUserId', '-2');
-        alert('Вход выполнен как администратор!');
+        // alert('Вход выполнен как администратор!');
         window.location.href = 'admin_film_list.html';
     } else {
         alert('Неверный код или пароль администратора.');

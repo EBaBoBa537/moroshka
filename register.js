@@ -15,14 +15,15 @@ Promise.all([
     localStorage.setItem('seanses', JSON.stringify(seanses.seanses));
     localStorage.setItem('tickets', JSON.stringify(tickets.tickets));
     localStorage.setItem('users', JSON.stringify(users.users));
+
+    // Правильный вывод всех ключей
+    console.log('LocalStorage содержимое после загрузки:');
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        console.log(`${key}:`, JSON.parse(localStorage.getItem(key)));
+    }
 })
 .catch(err => console.error('Ошибка при загрузке данных:', err));
-
-// ПРОВЕРКА LOCALSTORAGE
-for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    console.log(`${key}:`, JSON.parse(localStorage.getItem(key)));
-}
 
 
 document.querySelector('button').addEventListener('click', () => {

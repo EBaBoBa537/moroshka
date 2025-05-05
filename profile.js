@@ -1,36 +1,24 @@
-// Получение всех пользователей из localStorage или создание по умолчанию
-let users = JSON.parse(localStorage.getItem("users"));
-if (!users) {
-    users = [
-        {
-            email: "user@gmail.com",
-            password: "1234"
-        },
-        {
-            email: "user2@gmail.com",
-            password: "1234"
-        }
-    ];
-    localStorage.setItem("users", JSON.stringify(users));
-}
+// Проверка авторизации
+const currentUserId = parseInt(localStorage.getItem("currentUserId"), 10);
 
-// Получаем email текущего пользователя
-const currentUserEmail = localStorage.getItem("currentUserEmail");
-if (!currentUserEmail) {
-    alert("Вы не вошли в систему");
+// Если пользователь не авторизован или зашёл администратор — отправляем на login
+if (isNaN(currentUserId) || currentUserId === -1 || currentUserId === -2) {
+    alert("Вы не вошли в аккаунт как пользователь.");
     window.location.href = "login.html";
 }
 
-// Находим текущего пользователя
-let currentUserIndex = users.findIndex(user => user.email === currentUserEmail);
-if (currentUserIndex === -1) {
-    alert("Пользователь не найден");
+// Получаем всех пользователей
+const users = JSON.parse(localStorage.getItem("users")) || [];
+
+// Находим текущего пользователя по ID
+const currentUser = users.find(user => user.id === currentUserId);
+
+if (!currentUser) {
+    alert("Пользователь не найден.");
     window.location.href = "login.html";
 }
 
-const currentUser = users[currentUserIndex];
-
-// Заполняем форму
+// Заполняем поля на странице
 document.querySelector('input[name="email"]').value = currentUser.email;
 document.querySelector('input[name="password"]').value = currentUser.password;
 
@@ -38,9 +26,15 @@ document.querySelector('input[name="password"]').value = currentUser.password;
 document.querySelectorAll("button")[0].addEventListener("click", () => {
     const newPassword = prompt("Введите новый пароль:");
     if (newPassword && newPassword.trim().length >= 4) {
-        users[currentUserIndex].password = newPassword.trim();
-        localStorage.setItem("users", JSON.stringify(users));
+        currentUser.password = newPassword.trim();
+
+        // Обновляем пользователя в массиве
+        const updatedUsers = users.map(u => u.id === currentUserId ? currentUser : u);
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+        // Обновляем отображаемый пароль
         document.querySelector('input[name="password"]').value = newPassword.trim();
+
         alert("Пароль обновлён");
     } else {
         alert("Пароль должен быть не менее 4 символов");
@@ -49,7 +43,7 @@ document.querySelectorAll("button")[0].addEventListener("click", () => {
 
 // Кнопка "Выйти из аккаунта"
 document.querySelectorAll("button")[1].addEventListener("click", () => {
-    localStorage.removeItem("currentUserEmail");
+    localStorage.setItem("currentUserId", "-1");
     window.location.href = "login.html";
 });
 
@@ -57,9 +51,9 @@ document.querySelectorAll("button")[1].addEventListener("click", () => {
 document.querySelectorAll("button")[2].addEventListener("click", () => {
     const confirmDelete = confirm("Вы уверены, что хотите удалить аккаунт?");
     if (confirmDelete) {
-        users.splice(currentUserIndex, 1);
-        localStorage.setItem("users", JSON.stringify(users));
-        localStorage.removeItem("currentUserEmail");
+        const updatedUsers = users.filter(u => u.id !== currentUserId);
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
+        localStorage.setItem("currentUserId", "-1");
         alert("Аккаунт удалён");
         window.location.href = "login.html";
     }
